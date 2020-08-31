@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller = "controller.ShowMoviesByYearController"
+    spacing = "10"
+    styleClass="root"
+    prefWidth="800.0"
+    alignment = "center"
+
+>
+
+  
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+
+    <HBox spacing = "10" styleClass="h1">
+        <ImageView>
+        <image>
+            <Image url = "@movie_icon.png"/>
+        </image>
+        </ImageView>
+        <Text text="Movies by Genre" styleClass="h1"/>
+    </HBox>
+    
+    <HBox styleClass = "root">
+        <VBox spacing = "10" styleClass = "root">
+            <Text text = "Years:" styleClass="h2" /> 
+            <ListView fx:id="yearLv" prefWidth = "200" prefHeight = "400"/>
+            <Button text = "Display Movies" styleClass = "button" fx:id="displayBtn" disable = "true" onAction="#handleYear"/>
+        </VBox>
+        
+            <VBox styleClass="root" spacing = "10">
+                   <Text text = "Movies:" styleClass="h2" /> 
+
+        
+        <TableView fx:id="moviesTv" prefWidth="600.0" prefHeight="400.0" >
+            <placeholder><Label text = "No results found."/></placeholder>
+            <columns>
+                <TableColumn fx:id="allMoviesTitleClm" text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="allMoviesYearClm" text="Year">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="year"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="allMoviesGenreClm" text="Genre">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="genre"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="allMoviesPriceClm" text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        
+    </VBox>
+
+    </HBox>
+    
+        <VBox styleClass = "root" spacing = "10" alignment = "center">
+        <Button text = "Exit" fx:id = "exitBtn" onAction = "#handleExit" styleClass = "button"/>
+    </VBox>
+
+</VBox>

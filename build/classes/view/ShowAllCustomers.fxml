@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?> 
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ShowAllCustomersController"
+    alignment="center"
+    spacing = "10"
+    styleClass="root"
+    prefWidth = "800.0"
+>
+
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+    
+    <HBox spacing="10" styleClass="h1">
+        <ImageView>
+            <image>
+                <Image url="@movie_icon.png"/>
+            </image>
+        </ImageView>
+        <Text text="Remove Customer" styleClass="h1"/>
+    </HBox>
+    
+    <HBox styleClass="root">
+        <VBox alignment="CENTER_LEFT">
+            <Pane HBox.hgrow="ALWAYS"/>
+        </VBox>
+        
+        <TableView fx:id="customerTv" prefWidth="800.0">
+            <placeholder><Label text = "No results found."/></placeholder>
+            <columns>
+                <TableColumn fx:id="customerIdClm" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="customerNameClm" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="customerBalClm" text="Balance">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="balance"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>  
+    </HBox>
+    
+    <VBox spacing="10" alignment="center">
+        <Button text="Exit" fx:id="exitBtn" onAction="#handleExit"/>
+    </VBox>
+    
+</VBox>

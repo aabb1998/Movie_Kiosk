@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller = "controller.CustomerRecordController"
+    spacing = "10"
+    styleClass = "root"
+    alignment = "center"
+    prefWidth = "800.0"
+>
+
+    
+        <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+    
+    <HBox spacing = "10" styleClass="h1">
+        <ImageView>
+        <image>
+            <Image url = "@movie_icon.png"/>
+        </image>
+        </ImageView>
+        <Text text="Customer Record" styleClass="h1"/>
+    </HBox>
+    
+    <HBox styleClass = "root" alignment = "center" spacing = "10">
+        <Label text = "Customer ID:"/>
+        <TextField fx:id = "customerIdTf"/>
+        <Button text = "Select Customer" fx:id = "selectCusBtn" onAction="#handleCusBtn" disable="true"/>    
+    </HBox>
+    
+    
+
+        
+    <VBox styleClass="root" alignment = "center" spacing = "10">
+       
+        <Text text="Rented Movies" styleClass="h2" />
+        <TableView fx:id="customerRentedTv" prefWidth="800.0" prefHeight="200.0">
+            <placeholder><Label text = "No results found."/></placeholder>
+            <columns>
+                <TableColumn fx:id="allMoviesTitleClm" text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="allMoviesYearClm" text="Year">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="year"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="allMoviesGenreClm" text="Genre">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="genre"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="allMoviesPriceClm" text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        
+    </VBox>
+    
+     <VBox styleClass="root" alignment = "center" spacing = "10">
+       
+        <Text text="Renting History" styleClass="h2" />
+
+        <TableView fx:id="customerRentingTv" prefWidth="800.0" prefHeight="200.0">
+            <placeholder><Label text = "No results found."/></placeholder>
+            <columns>
+                <TableColumn fx:id="titleClm" text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="yearClm" text="Year">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="year"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="genreClm" text="Genre">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="genre"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="priceClm" text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        
+    </VBox>
+    
+    <VBox spacing="10" alignment="center">
+        <Button text="Close" fx:id="exitBtn" onAction="#handleClose"/>
+    </VBox>
+   
+</VBox>
+    
+    

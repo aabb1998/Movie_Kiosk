@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+
+
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.KioskController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+
+    <HBox spacing="10" styleClass="h1">
+        <ImageView>
+            <image>
+                <Image url="@movie_icon.png"/>
+            </image>
+        </ImageView>
+        <Text text="Movie Kiosk" styleClass="h1"/>
+    </HBox>
+
+    <HBox alignment = "CENTER_RIGHT">
+        <Button fx:id="adminBtn" text="Administration" onAction="#handleOpenAdmin"/>
+    </HBox>
+    
+    <HBox spacing="10" >
+        <Button fx:id="exploreCatBtn" text = "Explore&#10;Catalogue" onAction="#handleOpenCatalogue" styleClass="largeButton"/>    
+        <Button fx:id="customerRecordMenu" text = "Customer&#10;Record" onAction="#handleOpenCustomerRecord" styleClass="largeButton"/>
+        <Button fx:id="topUpMenu" text = "Top-Up&#10;Account" onAction="#handleOpenTopUpMenu" styleClass="largeButton"/>
+        <Button fx:id="favoriteBtn" text = "Favourite&#10;Movies" onAction="#handleOpenFavorites" styleClass="largeButton"/>
+    </HBox>
+    
+    <HBox alignment = "CENTER">
+        <Button text="Quit" fx:id="quitBtn" onAction="#handleQuit"/>
+    </HBox>
+
+</VBox>
+

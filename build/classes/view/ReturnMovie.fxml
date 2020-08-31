@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ReturnMovieController"
+    spacing = "10"
+    styleClass = "root"
+    alignment = "center"
+    prefWidth = "800.0"
+>
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+    
+    <HBox spacing = "10" styleClass="h1">
+        <ImageView>
+        <image>
+            <Image url = "@movie_icon.png"/>
+        </image>
+        </ImageView>
+        <Text text="Return a Movie" styleClass="h1"/>
+    </HBox>
+    
+       <VBox>
+
+    
+    <HBox styleClass = "root" alignment = "center" spacing = "10">
+        <Label text = "Customer ID:"/>
+        <TextField fx:id = "customerIdTf"/>
+        <Button text = "Select Customer" fx:id = "selectCusBtn" onAction="#handleSelectCustomer" disable="true"/>    
+    </HBox>
+    
+          <VBox alignment = "center" styleClass="root" spacing = "10">
+        <Text text = "Rented Movies" styleClass = "h2"/>
+        
+        <TableView fx:id="returnTv" prefHeight="200.0" prefWidth = "400.0">
+            <placeholder><Label text = "No results found."/></placeholder>
+            <columns>
+                <TableColumn fx:id="titleClm" text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="yearClm" text="Year">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="year"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="genreClm" text="Genre">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="genre"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="priceClm" text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        
+        
+        
+    </VBox>
+    <VBox spacing = "10" alignment = "center">
+            <Button text = "Return Selected Movie" fx:id = "returnBtn" disable="true" onAction="#handleReturn" />
+    </VBox>
+
+    </VBox>
+    
+    <HBox styleClass = "root" alignment = "center" spacing = "10">
+        <Label fx:id="customerLbl"/>
+    </HBox>
+    
+    <VBox alignment = "center" spacing = "10">
+        <Button text = "Close" fx:id = "closeBtn" onAction="#handleClose"  />
+    </VBox>
+    
+    
+    
+    
+    
+</VBox>
+
+    
+

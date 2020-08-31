@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<VBox fx:controller="controller.CatalogueController" xmlns:fx="http://javafx.com/fxml"
+    spacing="10"
+    styleClass="root"
+    prefWidth="800.0"
+    alignment="center"
+>
+
+    
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+    
+    <HBox spacing = "10" styleClass="h1">
+        <ImageView>
+        <image>
+            <Image url = "@movie_icon.png"/>
+        </image>
+        </ImageView>
+        <Text text="Catalogue Menu" styleClass="h1"/>
+    </HBox>
+    
+
+    <HBox spacing = "10">
+        <VBox spacing="10">
+            <Text text="View Movies:" styleClass="h2"/>
+            <Button fx:id="viewAll" text="All Movies" styleClass="menuButton" onAction="#handleShowAll"/>
+            <Button fx:id="viewAvailable" text="Available Movies" styleClass="menuButton" onAction="#handleShowAvailable"/>
+            <Button fx:id="movieByGenre" text="Movies by Genre" styleClass="menuButton" onAction="#handleMovieGenre"/>
+            <Button fx:id="movieByYear" text="Movies by Year" styleClass="menuButton" onAction="#handleMovieYear"/>
+
+        </VBox>
+
+        <HBox spacing="10" alignment ="center">
+                    <Button fx:id="rentMovie" text="Rent a&#10;Movie" styleClass="largeButton" onAction = "#handleRent"/>
+                    <Button fx:id="returnMovie" text="Return&#10;Movie" styleClass="largeButton" onAction="#handleReturn"/>
+        </HBox>
+
+
+        
+    </HBox>
+        <HBox alignment = "CENTER">
+            <Button text="Quit" fx:id="quitBtn" onAction="#handleQuit"/>
+        </HBox>
+    
+</VBox>
+    
+    
+    
+    
+
+    
+
+    
